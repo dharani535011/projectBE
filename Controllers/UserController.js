@@ -77,7 +77,9 @@ const UserContoller={
             from:"dharani535011@gmail.com",
             to:users.email,
             subject:"password reset OTP",
-            text:`change your password to use this otp : ${random}`
+            text:`change your password to use this otp : ${random}
+                  Go Change your password in this : ${"https://magical-kheer-0ce23a.netlify.app/resetpassword"}
+                 `
           })
           res.send({message:"OTP send to your mail.."})
           }catch(e){
