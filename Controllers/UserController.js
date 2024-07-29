@@ -116,7 +116,11 @@ const UserContoller={
         logout:async(req,res)=>{
             try {
                 // res.cookie("authtoken","",{maxAge:0})
-                res.clearCookie("authtoken")
+                res.clearCookie("authtoken", {
+                    httpOnly: true,
+                    secure: true,
+                    sameSite: "None"
+                })
                 res.send({ message: 'Logout successful' })
             } catch (error) {
                 res.send({message:error.message})
